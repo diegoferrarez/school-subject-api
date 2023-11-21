@@ -1,6 +1,6 @@
-package br.edu.future.subjects.util;
+package br.edu.future.subjects.util.mapper;
 
-import br.edu.future.subjects.domain.Subject;
+import br.edu.future.subjects.domain.Subjects;
 import br.edu.future.subjects.domain.dto.SubjectResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
@@ -10,13 +10,12 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class RegisterSubjectMapper {
+public class MapperConfig {
 
     private final ObjectMapper mapper;
-
     @SneakyThrows
-    public SubjectResponse toResponse(HttpStatus ok, Subject students) {
-        var json = this.mapper.writeValueAsString(students);
+    public SubjectResponse toResponseSubject(HttpStatus ok, Subjects subject) {
+        var json = this.mapper.writeValueAsString(subject);
         return this.mapper.readValue(json, SubjectResponse.class);
     }
 }

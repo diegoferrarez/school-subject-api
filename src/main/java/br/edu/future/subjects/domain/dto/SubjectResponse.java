@@ -10,8 +10,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SubjectResponse {
-
-    private String IdSubject;
-    private String name;
+    private String idSubject;
+    private String nameSubject;
     private int workload;
 }
+
+
+

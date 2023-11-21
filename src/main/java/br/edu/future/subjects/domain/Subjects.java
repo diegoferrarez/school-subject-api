@@ -11,9 +11,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @AllArgsConstructor
 @NoArgsConstructor
 @Document(collection = "subjects")
-public class Subject {
+public class Subjects {
 
-    private String IdSubject;
+    private String idSubject;
     private String nameSubject;
     private int workload;
 }
